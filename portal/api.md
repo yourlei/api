@@ -109,10 +109,10 @@
 - 200: GET请求成功, 及DELETE或PATCH同步请求完成，或者PUT同步更新一个已存在的资源
 - 201: POST 同步请求完成，或者PUT同步创建一个新的资源
 
-- 400 参数错误
-- 401 Unauthorized: 用户未认证，请求失败
-- 403 Forbidden: 用户无权限访问该资源，请求失败
-- 404 Not found: 资源不存在
+- 400: 参数错误
+- 401: Unauthorized: 用户未认证，请求失败
+- 403: Forbidden: 用户无权限访问该资源，请求失败
+- 404: Not found: 资源不存在
 
 - 500 Internal Server Error: 服务器错误，确认状态并报告问题
 
