@@ -4,7 +4,7 @@
 
 ## 2.9生成报告
 
-报告页面由服务端渲染, 前端负责提交表单数据, 后台根据报告模板查询季报/半年报/年报数据生成实时图表数据,　图表使用echart生成可进行交互, 用户可选择查看报告指定章节的内容,　报告内容可导出为docx文档
+报告页面由服务端渲染, 前端负责提交表单数据, 后台根据报告模板查询季报/半年报/年报数据生成实时图表数据,　图表使用echart生成可进行交互, 用户可选择查看报告指定章节的内容;　当用户发送导出报告请求时, 由node生成实时可视化图片, 并将图片加入到docx文档(两个主要依赖是 **officegen**, **node-echart**)
 
 ### 2.9.1led行业报告
 
@@ -43,23 +43,19 @@
 ### 2.9.2新一代信息技术产业报告
 
 - method: get
-- url: domain/ngit?query={body}&token=value
+- url: domain/api/v1/ngit?query={body}&token=value
 
 
 
 - 参数说明同上
 
 
-## 2.10 导出报告
+## 2.10导出报告
 
 - method: get
-~ - url: domain/docx/led ~
-
-~ type: led / ngit (两个行业的报告) ~
-
 - url: domain/report/docx/:name?query={body}
 
-*name led | ngit*
+name: *led|ngit*
 
 - body 参数
 
@@ -69,22 +65,20 @@
 　"catalog": "1000001", # 长度为７, 
   "classify": "0", # 0年报，1半年报, 2季度报
   "year": "2010",　　# 报告年份
-  "period": "0"　# 0年报/上半年/第一季度，1下半年/第二季度, 2第三季度报, 3第四季
-度（0, 1时根据classify确定其值）
+  "period": "0"　 # 0:年报/上半年/第一季度,1:下半年/第二季度, 2:第三季度报, 3:第四季度（0, 1时根据classify确定其值）
 }
 ```
 
 
-
-- 返回值
+- 返回结果
 
 ``` json
 {
-  code: 0,
-  error: {
-    msg: ''
+  "code": 0,
+  "error": {
+    "msg": ""
   },
-  filename: 'led.docx'
+  "filename": "led.docx"
 }
 ```
 
@@ -92,14 +86,14 @@
 
 | code         |  msg         |   说明   |
 |:------------:|:------------:|:--------:|
-| 1        | 参数错误 |          |
+| 1            | 参数错误       |          |
 
 
 
-20180202更新
+**20180202更新**
 ---
 
-## 2.10 专利申请趋势数据
+## 2.11专利申请趋势数据
 
 - method: post
 - url: domain/api/v1/warning/trend
@@ -113,18 +107,18 @@
 }
 ```
 
-- 返回值
+- 返回结果
 
 ``` json
 {
-  code: 0,
-  error: {
-    msg: ''
+  "code": 0,
+  "error": {
+    "msg": ""
   },
-  data: {
-    d1: [], # 发明
-    d2: [], # 外观
-    d3: [] # 实用
+  "data": {
+    "d1": [], # 发明
+    "d2": [], # 外观
+    "d3": []  # 实用
   }
 }
 ```
@@ -132,7 +126,7 @@
 *三组数据对应的时间顺序为1985-2017*
 
 
-## 2.11 生命周期分析
+## 2.12生命周期分析
 
 - method: post
 - url: domain/api/v1/warning/index
@@ -146,19 +140,20 @@
 }
 ```
 
-- 返回值
+- 返回结果
 
 ``` json
 {
-  code: 0,
-  error: {
-    msg: ''
+  "code": 0,
+  "error": {
+    "msg": ""
   },
-  data: {
-    growthRate: [], # 成长率
-    growthx: [], # 成熟系数
-    agingx: [] # 衰老系数
+  "data": {
+    "growthRate": [], # 成长率
+    "growthx": [],    # 成熟系数
+    "agingx": []      # 衰老系数
   }
 }
 ```
+
 *三组数据对应的时间顺序为2000-2017*
