@@ -60,7 +60,7 @@ name: *led|ngit*
 ``` json
 {
   "title": "报告标题",
-　"catalog": "1000001", //长度为７, 
+  "catalog": "1000001", //长度为７, 
   "classify": "0",     //0年报，1半年报, 2季度报
   "year": "2010",　　  //报告年份
   "period": "0"　     //0:年报/上半年/第一季度,1:下半年/第二季度, 2:第三季度报, 3:第四季度（0, 1时根据classify确定其值）
@@ -130,16 +130,16 @@ name: *led|ngit*
 
 - 参数
 
-``` json
+``` js
 {
-	"industry": "led",
-	"province": "广东" //可选
+  "industry": "led",
+  "province": "广东" //可选
 }
 ```
 
 - 返回结果
 
-``` json
+``` js
 {
   "code": 0,
   "error": {
