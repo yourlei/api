@@ -529,7 +529,7 @@ mapping 的格式如下:
 
 ``` js
 {
-	"key": "389bb754fcdd230e370fc6917485c687",
+  "key": "389bb754fcdd230e370fc6917485c687",
   "index": "insight_dc",
   "primary": "id",
   "mapping": {"id": {"type":"keyword"}, "name": {"type": "keyword"}},
@@ -726,7 +726,7 @@ mapping 的格式如下:
         "deleted_at": "1999-12-31T16:00:00.000Z"
     }
   ],
-  "total": 2
+  "total": 1
 }
 ```
 
