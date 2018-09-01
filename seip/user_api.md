@@ -13,7 +13,7 @@
 
 - body 参数
 
-``` json
+``` js
 {
   "title": "报告标题",
   "catalog": "1000001",  
@@ -57,7 +57,7 @@ name: *led|ngit*
 
 - body 参数
 
-``` json
+``` js
 {
   "title": "报告标题",
   "catalog": "1000001", //长度为７, 
@@ -70,7 +70,7 @@ name: *led|ngit*
 
 - 返回结果
 
-``` json
+``` js
 {
   "code": 0,
   "error": {
@@ -97,7 +97,7 @@ name: *led|ngit*
 
 - 参数
 
-``` json
+``` js
 {
 	"industry": "led",
 	"province": "广东" //可选
@@ -106,7 +106,7 @@ name: *led|ngit*
 
 - 返回结果
 
-``` json
+``` js
 {
   "code": 0,
   "error": {
