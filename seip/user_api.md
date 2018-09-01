@@ -99,8 +99,8 @@ name: *led|ngit*
 
 ``` js
 {
-	"industry": "led",
-	"province": "广东" //可选
+  "industry": "led",
+  "province": "广东" //可选
 }
 ```
 
